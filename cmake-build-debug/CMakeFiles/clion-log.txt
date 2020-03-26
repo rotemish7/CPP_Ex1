@@ -1,0 +1,40 @@
+"C:\Users\rotem levy\.CLion2019.3\system\cygwin_cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/cygdrive/c/Users/rotem levy/CLionProjects/phonetic_search"
+-- The CXX compiler identification is GNU 8.3.0
+-- Check for working CXX compiler: /usr/bin/c++.exe
+-- Check for working CXX compiler: /usr/bin/c++.exe -- broken
+CMake Error at /cygdrive/c/Users/rotem levy/.CLion2019.3/system/cygwin_cmake/share/cmake-3.15.3/Modules/CMakeTestCXXCompiler.cmake:53 (message):
+  The C++ compiler
+
+    "/usr/bin/c++.exe"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: /cygdrive/c/Users/rotem levy/CLionProjects/phonetic_search/cmake-build-debug/CMakeFiles/CMakeTmp
+    
+    Run Build Command(s):/usr/bin/make.exe cmTC_7057b/fast && /usr/bin/make -f CMakeFiles/cmTC_7057b.dir/build.make CMakeFiles/cmTC_7057b.dir/build
+    make[1]: Entering directory '/cygdrive/c/Users/rotem levy/CLionProjects/phonetic_search/cmake-build-debug/CMakeFiles/CMakeTmp'
+    Building CXX object CMakeFiles/cmTC_7057b.dir/testCXXCompiler.cxx.o
+    /usr/bin/c++.exe     -o CMakeFiles/cmTC_7057b.dir/testCXXCompiler.cxx.o -c "/cygdrive/c/Users/rotem levy/CLionProjects/phonetic_search/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx"
+    Linking CXX executable cmTC_7057b.exe
+    "/cygdrive/c/Users/rotem levy/.CLion2019.3/system/cygwin_cmake/bin/cmake.exe" -E cmake_link_script CMakeFiles/cmTC_7057b.dir/link.txt --verbose=1
+    /usr/bin/c++.exe    -Wl,--enable-auto-import  CMakeFiles/cmTC_7057b.dir/testCXXCompiler.cxx.o  -o cmTC_7057b.exe -Wl,--out-implib,libcmTC_7057b.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+    c++: fatal error: -fuse-linker-plugin, but cyglto_plugin.dll not found
+    compilation terminated.
+    make[1]: *** [CMakeFiles/cmTC_7057b.dir/build.make:87: cmTC_7057b.exe] Error 1
+    make[1]: Leaving directory '/cygdrive/c/Users/rotem levy/CLionProjects/phonetic_search/cmake-build-debug/CMakeFiles/CMakeTmp'
+    make: *** [Makefile:121: cmTC_7057b/fast] Error 2
+    
+    
+
+  
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:2 (project)
+
+
+-- Configuring incomplete, errors occurred!
+See also "/cygdrive/c/Users/rotem levy/CLionProjects/phonetic_search/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "/cygdrive/c/Users/rotem levy/CLionProjects/phonetic_search/cmake-build-debug/CMakeFiles/CMakeError.log".
