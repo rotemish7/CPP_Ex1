@@ -1,6 +1,7 @@
 //
 // Created by rotem levy on 26/03/2020.
 //
+#include <iostream>
 
 #ifndef PHONETIC_SEARCH_PHONETICFINDER_H
 
