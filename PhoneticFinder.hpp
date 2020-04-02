@@ -10,5 +10,6 @@ using namespace std;
 namespace phonetic
 {
     string find(string text, string word);
+    bool isMatch(char a, char b);
 };
 #endif //PHONETIC_SEARCH_PHONETICFINDER_H

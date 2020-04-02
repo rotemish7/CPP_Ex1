@@ -64,7 +64,7 @@ string phonetic::find(string text, string word)
     throw exception();
 }
 
-bool isMatch(char a, chat b)
+bool isMatch(char a, char b)
 {
     a = (char)tolower(a);
     b = (char)tolower(b);
@@ -72,7 +72,7 @@ bool isMatch(char a, chat b)
 
     switch(a)
     {
-        case 'v :
+        case 'v' :
         case 'w':
             switch (b)
             {
@@ -166,6 +166,6 @@ bool isMatch(char a, chat b)
                 default  : return false;
             }
 
-        default : return ((c1==c2)||(c1==c2-32)||(c1==c2+32));
+        default : return ((a==b)||(a==b-32)||(a==b+32));
     }
 }
