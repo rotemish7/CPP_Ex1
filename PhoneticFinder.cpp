@@ -7,38 +7,49 @@
 
 using namespace std;
 
+/*
+ * Main function - find
+ */
 string phonetic::find(string text, string word)
 {
+    /**
+     * Aiding variables
+     */
     int i=0;
     int j=0;
+    int text_len = text.length();
+    int word_len = word.length();
 
-    while( j<text.length() && i < word.length())
+    /**
+     * Main loop
+     */
+    while( j<text_len && i < word_len)
     {
         bool flag=true;
 
-        while( (text.at(j)!=' ') && (j!=text.length()) )
+        while( (text.at(j)!=' ') && (j!=text_len) )
         {
             bool match = false;
 
             if(isMatch(text.at(j),word.at(i)) && flag)
             {
-                if(word.length()-1 != i)
+                if(word_len-1 != i)
                 {
                     i++;
                 }
-                if(word.length()== 1 && text.at(j+1) == ' ')
+                if(word_len == 1 && text.at(j+1) == ' ')
                 {
                     return text.substr(j - i, i+1);
                 }
-                if(text.length()-1!=j )
+                if(text_len-1!=j )
                 {
                     j++;
                 }
                 match = true;
             }
-            if ((i == word.length()-1 ) &&  match )
+            if ((i == word_len-1 ) &&  match )
             {
-                if ((j == text.length() - 1) || (text.at(j) == ' ') || (text.at(j + 1) == ' '))
+                if ((j == text_len - 1) || (text.at(j) == ' ') || (text.at(j + 1) == ' '))
                 {
                     if(isMatch(text.at(j),word.at(i)) && flag)
                     {
@@ -47,7 +58,7 @@ string phonetic::find(string text, string word)
                 }
             }
 
-            if (i == word.length())
+            if (i == word_len)
             {
                 i = 0;
             }
@@ -63,18 +74,20 @@ string phonetic::find(string text, string word)
     }
     throw exception();
 }
-
-bool isMatch(char a, char b)
+/*
+ * Helping function - checking if two chars are the same
+ */
+bool isMatch(char ch1, char ch2)
 {
-    a = (char)tolower(a);
-    b = (char)tolower(b);
+    ch1 = (char)tolower(ch1);
+    ch2 = (char)tolower(ch2);
 
 
-    switch(a)
+    switch(ch1)
     {
         case 'v' :
         case 'w':
-            switch (b)
+            switch (ch2)
             {
                 case 'v' : return true;
                 case 'V' : return true;
@@ -86,7 +99,7 @@ bool isMatch(char a, char b)
         case 'b' :
         case 'f' :
         case 'p' :
-            switch (b)
+            switch (ch2)
             {
                 case 'b' : return true;
                 case 'B' : return true;
@@ -99,7 +112,7 @@ bool isMatch(char a, char b)
 
         case 'g':
         case 'j':
-            switch(b)
+            switch(ch2)
             {
                 case 'g' : return true;
                 case 'G' : return true;
@@ -111,7 +124,7 @@ bool isMatch(char a, char b)
         case 'c':
         case 'k':
         case 'q':
-            switch(b)
+            switch(ch2)
             {
                 case 'c' : return true;
                 case 'C' : return true;
@@ -124,7 +137,7 @@ bool isMatch(char a, char b)
 
         case 's':
         case 'z':
-            switch(b)
+            switch(ch2)
             {
                 case 's' : return true;
                 case 'S' : return true;
@@ -135,7 +148,7 @@ bool isMatch(char a, char b)
 
         case 'd':
         case 't':
-            switch(b)
+            switch(ch2)
             {
                 case 'd' : return true;
                 case 'D' : return true;
@@ -146,7 +159,7 @@ bool isMatch(char a, char b)
 
         case 'o':
         case 'u':
-            switch(b)
+            switch(ch2)
             {
                 case 'o' : return true;
                 case 'O' : return true;
@@ -157,7 +170,7 @@ bool isMatch(char a, char b)
 
         case 'i':
         case 'y':
-            switch(b)
+            switch(ch2)
             {
                 case 'i' : return true;
                 case 'I' : return true;
@@ -166,6 +179,6 @@ bool isMatch(char a, char b)
                 default  : return false;
             }
 
-        default : return ((a==b)||(a==b-32)||(a==b+32));
+        default : return ((ch1 == ch2)||(ch1 == ch2-32)||(ch1 == ch2+32));
     }
 }
