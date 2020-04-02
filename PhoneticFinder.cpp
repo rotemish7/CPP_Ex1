@@ -22,7 +22,7 @@ string phonetic::find(string text, string word)
 
             if(isMatch(text.at(j),word.at(i)) && flag)
             {
-                if(word.length()-1! = i)
+                if(word.length()-1 != i)
                 {
                     i++;
                 }
