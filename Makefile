@@ -6,11 +6,11 @@ CXXFLAGS=-std=c++2a
 HEADERS=PhoneticFinder.hpp
 OBJECTS=PhoneticFinder.o
 
-run: demo
+run: test
 	./$^
 
-#demo: Demo.o $(OBJECTS)
-	#$(CXX) $(CXXFLAGS) $^ -o demo
+demo: Demo.o $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $^ -o demo
 
 test: TestCounter.o Test.o $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $^ -o test
